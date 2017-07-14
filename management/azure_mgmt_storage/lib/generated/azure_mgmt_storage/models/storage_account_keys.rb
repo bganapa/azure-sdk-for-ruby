@@ -6,46 +6,44 @@
 module Azure::ARM::Storage
   module Models
     #
-    # The custom domain assigned to this storage account. This can be set via
-    # Update.
+    # The access keys for the storage account.
     #
-    class CustomDomain
+    class StorageAccountKeys
 
       include MsRestAzure
 
       include MsRest::JSONable
-      # @return [String] The custom domain name. Name is the CNAME source.
-      attr_accessor :name
+      # @return [String] The value of key 1.
+      attr_accessor :key1
 
-      # @return [Boolean] Indicates whether indirect CName validation is
-      # enabled. Default value is false. This should only be set on updates
-      attr_accessor :use_sub_domain
+      # @return [String] The value of key 2.
+      attr_accessor :key2
 
 
       #
-      # Mapper for CustomDomain class as Ruby Hash.
+      # Mapper for StorageAccountKeys class as Ruby Hash.
       # This will be used for serialization/deserialization.
       #
       def self.mapper()
         {
           required: false,
-          serialized_name: 'CustomDomain',
+          serialized_name: 'StorageAccountKeys',
           type: {
             name: 'Composite',
-            class_name: 'CustomDomain',
+            class_name: 'StorageAccountKeys',
             model_properties: {
-              name: {
-                required: true,
-                serialized_name: 'name',
+              key1: {
+                required: false,
+                serialized_name: 'key1',
                 type: {
                   name: 'String'
                 }
               },
-              use_sub_domain: {
+              key2: {
                 required: false,
-                serialized_name: 'useSubDomain',
+                serialized_name: 'key2',
                 type: {
-                  name: 'Boolean'
+                  name: 'String'
                 }
               }
             }
