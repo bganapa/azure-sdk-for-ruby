@@ -6,28 +6,28 @@
 module Azure::ARM::Network
   module Models
     #
-    # Response for GetConnectionSharedKey Api servive call
+    # Azure resource manager sub resource properties.
     #
-    class ConnectionSharedKey
-      # @return [String] The virtual network connection shared key value
-      attr_accessor :value
+    class SubResource
+      # @return [String] Resource Identifier.
+      attr_accessor :id
 
 
       #
-      # Mapper for ConnectionSharedKey class as Ruby Hash.
+      # Mapper for SubResource class as Ruby Hash.
       # This will be used for serialization/deserialization.
       #
       def self.mapper()
         {
           required: false,
-          serialized_name: 'ConnectionSharedKey',
+          serialized_name: 'SubResource',
           type: {
             name: 'Composite',
-            class_name: 'ConnectionSharedKey',
+            class_name: 'SubResource',
             model_properties: {
-              value: {
+              id: {
                 required: false,
-                serialized_name: 'value',
+                serialized_name: 'id',
                 type: {
                   name: 'String'
                 }

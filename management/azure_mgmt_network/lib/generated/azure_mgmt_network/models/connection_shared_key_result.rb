@@ -6,24 +6,24 @@
 module Azure::ARM::Network
   module Models
     #
-    # Response for GetConnectionSharedKey Api servive call
+    # Response for CheckConnectionSharedKey Api servive call
     #
-    class ConnectionSharedKey
+    class ConnectionSharedKeyResult
       # @return [String] The virtual network connection shared key value
       attr_accessor :value
 
 
       #
-      # Mapper for ConnectionSharedKey class as Ruby Hash.
+      # Mapper for ConnectionSharedKeyResult class as Ruby Hash.
       # This will be used for serialization/deserialization.
       #
       def self.mapper()
         {
           required: false,
-          serialized_name: 'ConnectionSharedKey',
+          serialized_name: 'ConnectionSharedKeyResult',
           type: {
             name: 'Composite',
-            class_name: 'ConnectionSharedKey',
+            class_name: 'ConnectionSharedKeyResult',
             model_properties: {
               value: {
                 required: false,
