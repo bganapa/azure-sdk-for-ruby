@@ -9,6 +9,10 @@ module Azure::ARM::Network
     # The routes table associated with the ExpressRouteCircuit
     #
     class ExpressRouteCircuitRoutesTable
+
+      include MsRestAzure
+
+      include MsRest::JSONable
       # @return [String] Gets AddressPrefix.
       attr_accessor :address_prefix
 

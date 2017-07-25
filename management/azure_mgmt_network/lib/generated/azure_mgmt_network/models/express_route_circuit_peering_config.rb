@@ -9,6 +9,10 @@ module Azure::ARM::Network
     # Specifies the peering configuration.
     #
     class ExpressRouteCircuitPeeringConfig
+
+      include MsRestAzure
+
+      include MsRest::JSONable
       # @return [Array<String>] The reference of AdvertisedPublicPrefixes.
       attr_accessor :advertised_public_prefixes
 

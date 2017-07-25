@@ -6,57 +6,54 @@
 module Azure::ARM::Network
   module Models
     #
-    # Model object.
+    # Error details properties
     #
-    #
-    class BgpSettings
+    class ErrorDetails
 
       include MsRestAzure
 
       include MsRest::JSONable
-      # @return [Integer] Gets or sets this BGP speaker's ASN
-      attr_accessor :asn
+      # @return [String]
+      attr_accessor :code
 
-      # @return [String] Gets or sets the BGP peering address and BGP
-      # identifier of this BGP speaker
-      attr_accessor :bgp_peering_address
+      # @return [String]
+      attr_accessor :target
 
-      # @return [Integer] Gets or sets the weight added to routes learned from
-      # this BGP speaker
-      attr_accessor :peer_weight
+      # @return [String]
+      attr_accessor :message
 
 
       #
-      # Mapper for BgpSettings class as Ruby Hash.
+      # Mapper for ErrorDetails class as Ruby Hash.
       # This will be used for serialization/deserialization.
       #
       def self.mapper()
         {
           required: false,
-          serialized_name: 'BgpSettings',
+          serialized_name: 'ErrorDetails',
           type: {
             name: 'Composite',
-            class_name: 'BgpSettings',
+            class_name: 'ErrorDetails',
             model_properties: {
-              asn: {
+              code: {
                 required: false,
-                serialized_name: 'asn',
-                type: {
-                  name: 'Number'
-                }
-              },
-              bgp_peering_address: {
-                required: false,
-                serialized_name: 'bgpPeeringAddress',
+                serialized_name: 'code',
                 type: {
                   name: 'String'
                 }
               },
-              peer_weight: {
+              target: {
                 required: false,
-                serialized_name: 'peerWeight',
+                serialized_name: 'target',
                 type: {
-                  name: 'Number'
+                  name: 'String'
+                }
+              },
+              message: {
+                required: false,
+                serialized_name: 'message',
+                type: {
+                  name: 'String'
                 }
               }
             }

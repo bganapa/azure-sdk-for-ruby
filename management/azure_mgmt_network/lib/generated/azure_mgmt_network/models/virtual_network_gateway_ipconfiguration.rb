@@ -8,7 +8,11 @@ module Azure::ARM::Network
     #
     # IP configuration for virtual network gateway
     #
-    class VirtualNetworkGatewayIPConfiguration < SubResource
+    class VirtualNetworkGatewayIPConfiguration < MsRestAzure::SubResource
+
+      include MsRestAzure
+
+      include MsRest::JSONable
       # @return [String] Gets or sets the privateIPAddress of the IP
       # Configuration
       attr_accessor :private_ipaddress

@@ -9,6 +9,10 @@ module Azure::ARM::Network
     # Backend address of an application gateway.
     #
     class ApplicationGatewayBackendAddress
+
+      include MsRestAzure
+
+      include MsRest::JSONable
       # @return [String] Fully qualified domain name (FQDN).
       attr_accessor :fqdn
 

@@ -9,6 +9,10 @@ module Azure::ARM::Network
     # Contains bandwidths offered in ExpressRouteServiceProvider resources.
     #
     class ExpressRouteServiceProviderBandwidthsOffered
+
+      include MsRestAzure
+
+      include MsRest::JSONable
       # @return [String] The OfferName.
       attr_accessor :offer_name
 

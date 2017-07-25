@@ -9,6 +9,10 @@ module Azure::ARM::Network
     # SKU of application gateway
     #
     class ApplicationGatewaySku
+
+      include MsRestAzure
+
+      include MsRest::JSONable
       # @return [ApplicationGatewaySkuName] Name of an application gateway SKU.
       # Possible values are: 'Standard_Small', 'Standard_Medium',
       # 'Standard_Large', 'WAF_Medium', and 'WAF_Large'. Possible values

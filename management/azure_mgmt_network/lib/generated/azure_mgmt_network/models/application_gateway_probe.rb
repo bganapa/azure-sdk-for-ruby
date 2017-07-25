@@ -8,7 +8,11 @@ module Azure::ARM::Network
     #
     # Probe of the application gateway.
     #
-    class ApplicationGatewayProbe < SubResource
+    class ApplicationGatewayProbe < MsRestAzure::SubResource
+
+      include MsRestAzure
+
+      include MsRest::JSONable
       # @return [ApplicationGatewayProtocol] Protocol. Possible values are:
       # 'Http' and 'Https'. Possible values include: 'Http', 'Https'
       attr_accessor :protocol

@@ -8,7 +8,11 @@ module Azure::ARM::Network
     #
     # Public IP address resource.
     #
-    class PublicIPAddress < Resource
+    class PublicIPAddress < MsRestAzure::Resource
+
+      include MsRestAzure
+
+      include MsRest::JSONable
       # @return [IPAllocationMethod] The public IP allocation method. Possible
       # values are: 'Static' and 'Dynamic'. Possible values include: 'Static',
       # 'Dynamic'

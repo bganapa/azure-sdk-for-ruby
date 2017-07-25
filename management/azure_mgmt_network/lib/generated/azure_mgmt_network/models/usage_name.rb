@@ -9,6 +9,10 @@ module Azure::ARM::Network
     # The usage names.
     #
     class UsageName
+
+      include MsRestAzure
+
+      include MsRest::JSONable
       # @return [String] A string describing the resource name.
       attr_accessor :value
 
